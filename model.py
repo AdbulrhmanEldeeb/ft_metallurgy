@@ -2,6 +2,8 @@ from unsloth import FastLanguageModel
 import torch
 from prompts import metallurgy_prompt
 
+# Check if a GPU is available; otherwise, use the CPU
+
 def load_model():
     max_seq_length = 2048
     dtype = None

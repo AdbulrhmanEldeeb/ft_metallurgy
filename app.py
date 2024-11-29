@@ -1,8 +1,11 @@
 from model import load_model, answer
 from components import create_app_layout
+import torch 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load the model and tokenizer
 model, tokenizer = load_model()
+model.to(device) 
 
 # Define the function for Gradio to call
 def gradio_answer_fn(query):
