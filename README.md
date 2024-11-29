@@ -2,7 +2,7 @@
 title: Metallurgy Expert Assistant  # Replace this with the name of your Space
 emoji: 🔧                          # Choose an emoji for your project
 colorFrom: blue                    # Starting gradient color for the card
-colorTo: teal                      # Ending gradient color for the card
+colorTo: red                      # Ending gradient color for the card
 sdk: gradio                       # The SDK you're using, e.g., gradio, streamlit, etc.
 sdk_version: "3.42.0"             # Version of the SDK, replace with your SDK version
 app_file: app.py                  # Name of the Python file that runs the app
