@@ -1,8 +1,8 @@
 from unsloth import FastLanguageModel
-import torch
 from prompts import metallurgy_prompt
+import torch 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Check if a GPU is available; otherwise, use the CPU
 
 def load_model():
     max_seq_length = 2048
@@ -22,7 +22,7 @@ def answer(model, tokenizer, query: str) -> str:
     inputs = tokenizer(
         [metallurgy_prompt.format(query, "", "")], 
         return_tensors="pt"
-    ).to("cuda")
+    ).to(device)
 
     outputs = model.generate(**inputs, use_cache=True)
     result = tokenizer.batch_decode(outputs)

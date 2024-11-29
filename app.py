@@ -1,6 +1,9 @@
 from model import load_model, answer
 from components import create_app_layout
 import torch 
+
+
+# Check if a GPU is available; otherwise, use the CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load the model and tokenizer
